@@ -9,10 +9,16 @@ function component() {
     "hello", "webpack"
   ], " "))
 
-  console.log("hello jquery")
-  console.log(t())
+  console.log("hi jquery")
 
   return element
 }
 
 $("body").append(component())
+
+if (module.hot) {
+  module.hot.accept("./test.js", function() {
+    console.log("accepting the updated module")
+    t()
+  })
+}

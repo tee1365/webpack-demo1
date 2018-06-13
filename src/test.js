@@ -1,5 +1,5 @@
 function test(){
-  return "test"
+  console.log('Updating')
 }
 
 module.exports = test
